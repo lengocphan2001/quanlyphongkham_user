@@ -1,0 +1,99 @@
+//
+// user/styles.scss
+// This file is mean to write your custom styling rules
+// It is recommended you do this way and not by editing the Bootstrap or DashCore styling files directly because future updates
+
+.post-thumbnail {
+    max-height: 230px;
+    object-fit: cover;
+}
+
+.card-blog {
+    height: 100%;
+}
+
+.post-author-avatar-large {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.nav-link {
+    font-weight: 500!important;
+}
+
+.font-medium {
+    font-weight: 500!important;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+}
+
+.display-7 {
+    font-size: calc(1.325rem + 0.9vw)!important;
+    font-weight: 300;
+    line-height: 1.2;
+}
+@media (min-width: 1200px) {
+    .display-7 {
+        font-size: 2rem!important;
+    }
+}
+
+
+.display-8 {
+    font-size: calc(1.275rem + 0.3vw)!important;
+    font-weight: 300;
+    line-height: 1.2;
+}
+@media (min-width: 1200px) {
+    .display-8 {
+        font-size: 1.5rem!important;
+    }
+}
+
+.logo {
+    width: 100px;
+    object-fit: contain;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify!important;
+}
+
+a {
+    font-weight: 500;
+}
+
+.mobile-menu-icon {
+    width: 16px;
+    height: auto;
+    margin-right: 4px;
+    margin-bottom: 2px;
+    object-fit: contain;
+}

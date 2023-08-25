@@ -1,0 +1,10 @@
+.header {
+    .header-alignment {
+        text-align: start;
+    }
+    @media only screen and (max-width: 768px) {
+        .header-alignment {
+            text-align: center;
+        }
+    }
+}

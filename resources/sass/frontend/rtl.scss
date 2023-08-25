@@ -1,0 +1,10 @@
+// RTL specific styles
+[dir="rtl"] {
+  @import "./RTL/utilities";
+  @import "./RTL/navigation";
+  @import "./RTL/components";
+  @import "./RTL/forms";
+  @import "./RTL/heading";
+  @import "./RTL/pricing";
+  @import "./RTL/sections";
+}

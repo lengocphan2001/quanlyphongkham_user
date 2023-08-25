@@ -1,0 +1,52 @@
+{
+    "name": "dashcore",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
+        "@popperjs/core": "^2.9.3",
+        "angled-edges": "^2.0.0",
+        "aos": "^2.3.4",
+        "bootstrap": "^5.1.0",
+        "card": "^2.5.3",
+        "cookieconsent": "^3.1.1",
+        "counterup2": "^2.0.1",
+        "feather-icons": "^4.28.0",
+        "jquery": "^3.6.0",
+        "jquery-validation": "^1.19.3",
+        "magnific-popup": "^1.1.0",
+        "noisejs": "^2.1.0",
+        "odometer": "^0.4.8",
+        "pe7-icon": "^1.0.4",
+        "perfect-scrollbar": "^1.5.2",
+        "popper.js": "^1.15.0",
+        "prismjs": "^1.24.1",
+        "smartwizard": "^5.1.1",
+        "swiper": "^6.8.1",
+        "typed.js": "^2.0.12",
+        "waypoints": "^4.0.1",
+        "webfontloader": "^1.6.28"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "laravel-mix": "^6.0.27",
+        "lodash": "^4.17.21",
+        "postcss": "^8.3.6",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.37.5",
+        "sass-loader": "^12.1.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
+}

@@ -1,0 +1,12 @@
+// Shared third-party styling components
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+@import "~angled-edges/angled-edges";
+
+// Shared variables
+@import "import/mixins";
+@import "import/bootstrap-overwrite";
+@import "import/variables";

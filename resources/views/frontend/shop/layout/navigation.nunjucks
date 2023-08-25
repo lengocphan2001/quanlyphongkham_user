@@ -1,0 +1,356 @@
+<header class="shadow-sm">
+    <!-- top-banner-->
+    <div class="top-banner top-banner-dark bg-dark">
+        <div class="container">
+            <div class="top-banner-text text-nowrap d-none d-md-inline-block">
+                <i data-feather="phone-call" width="16" height="16" class="me-2"></i>
+                <a class="top-banner-link" href="tel:123456789">(123) 456789</a>
+            </div>
+
+            {% set messages = [
+                "Most have bestsellers up to 80% off for 11.11",
+                "Free shipping on orders above $50",
+                'Add to cart and save up to 50% off <a href="javascript:;">Check Deals</a>'
+            ] %}
+            <div class="swiper-container" data-sw-autoplay="2500">
+                <div class="swiper-wrapper">
+                    {% for message in messages %}
+                        <div class="swiper-slide text-center top-banner-text">
+                            {{ message | safe }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="ms-3 text-nowrap">
+                <a class="top-banner-link me-4 d-none d-md-inline-block" href="javascript:;">
+                    <i data-feather="smartphone" width="16" height="16"></i> App
+                </a>
+
+                <div class="top-banner-text dropdown disable-autohide">
+                    <a class="top-banner-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <img class="me-2" height="16" src="{{ baseUrl.path }}{{ baseUrl.img }}/flags/gb.svg" alt="English"/>English / USD
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a class="dropdown-item pb-1" href="#"><img class="me-2" height="16" src="{{ baseUrl.path }}{{ baseUrl.img }}/flags/al.svg" alt="Français"/>Español</a></li>
+                        <li><a class="dropdown-item pb-1" href="#"><img class="me-2" height="16" src="{{ baseUrl.path }}{{ baseUrl.img }}/flags/gb.svg" alt="Deutsch"/>English</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <img src="{{ baseUrl.path }}{{ baseUrl.img }}/logo.png" alt="Dashcore" class="logo logo-sticky">
+
+            <form class="d-none d-lg-flex mx-4 w-100">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="What are you looking for?">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarCollapse3">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-tool navbar-stuck-toggler ms-1 me-2" href="#">
+                    <div class="navbar-tool-icon-box">
+                        <i data-feather="more-horizontal" height="16" class="navbar-tool-icon"></i>
+                    </div>
+                </a>
+
+                <a class="navbar-tool me-lg-2" href="{{ baseUrl.path }}register.html">
+                    <div class="media align-items-center">
+                        <i data-feather="user" class="navbar-tool-icon me-2"></i>
+                        <div class="media-body">
+                            <div class="navbar-tool-text ms-n2">
+                                <small class="d-block">Hello, Sign in</small>My Account
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="navbar-tool dropdown ms-3">
+                    <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="javascript:;" data-bs-toggle="dropdown" >
+                        <div class="media">
+                            <span class="navbar-tool-label">4</span>
+                            <i data-feather="shopping-cart" class="navbar-tool-icon"></i>
+
+                            <div class="media-body">
+                                <div class="navbar-tool-text" href="cart.html">
+                                    <small class="d-block">My Cart</small>$265.00
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Cart dropdown-->
+                    <div class="dropdown-menu dropdown-menu-right" style="width: 20rem;">
+                        <div class="widget widget-cart px-3 pt-2 pb-3">
+                            <div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+                                {% for i in range(1, 5) %}
+                                    <div class="widget-cart-item pb-2 border-bottom">
+                                        <button class="close text-danger" type="button" aria-label="Remove"><span aria-hidden="true">&times;</span></button>
+                                        <div class="media align-items-center">
+                                            <a class="d-block me-2" href="shop-single.html">
+                                                <img width="64" src="http://lorempixel.com/80/80/sports" alt="Product"/>
+                                            </a>
+                                            <div class="media-body">
+                                                <h6 class="widget-product-title"><a href="shop-single.html">Women Colorblock Sneakers</a></h6>
+                                                <div class="widget-product-meta"><span class="text-accent me-2">$150.<small>00</small></span><span class="text-muted">x 1</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                                <div class="font-size-sm me-2 py-2">
+                                    <span class="text-muted">Subtotal:</span>
+                                    <span class="text-accent font-size-base ms-1">
+                                        $265.<small>00</small>
+                                    </span>
+                                </div>
+                                <a class="btn btn-outline-secondary btn-sm" href="cart.html">
+                                    Expand cart
+                                    <i data-feather="chevron-right"></i>
+                                </a>
+                            </div>
+                            <a class="btn btn-primary btn-sm btn-block" href="checkout-details.html"><i class="czi-card me-2 font-size-base align-middle"></i>Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation navbar navbar-expand-lg navbar-light navbar-stuck-menu mt-n2 pt-0 pb-2">
+        <div class="container">
+            <button class="navbar-toggler" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse3">
+                <div class="sidebar-brand">
+                    <a href="index.html">
+                        <img src="{{ baseUrl.path }}{{ baseUrl.img }}/logo.png" alt="Dashcore Template" class="logo">
+                    </a>
+                </div>
+
+                <!-- Search-->
+                <div class="input-group-overlay d-lg-none my-3">
+                    <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
+                    <input class="form-control prepended-form-control" type="text" placeholder="Search for products">
+                </div>
+                <!-- Departments menu-->
+                <ul class="navbar-nav mega-nav pe-lg-2 me-lg-2">
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle ps-0" href="#" data-bs-toggle="dropdown"><i class="czi-view-grid me-2"></i>Departments</a>
+                        <div class="dropdown-menu px-2 ps-0 pb-4">
+                            <div class="d-flex flex-wrap flex-md-nowrap">
+                                <div class="pt-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links"><a class="d-block overflow-hidden rounded-lg mb-3" href="#"><img src="img/shop/departments/01.jpg" alt="Shoes"/></a>
+                                        <h6 class="font-size-base mb-2">Clothing</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Women's clothing</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Men's clothing</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Kid's clothing</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pt-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links"><a class="d-block overflow-hidden rounded-lg mb-3" href="#"><img src="img/shop/departments/02.jpg" alt="Shoes"/></a>
+                                        <h6 class="font-size-base mb-2">Shoes</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Women's shoes</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Men's shoes</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Kid's shoes</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pt-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links"><a class="d-block overflow-hidden rounded-lg mb-3" href="#"><img src="img/shop/departments/03.jpg" alt="Shoes"/></a>
+                                        <h6 class="font-size-base mb-2">Gadgets</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Smartphones &amp; Tablets</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Wearable gadgets</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">E-book readers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap flex-md-nowrap">
+                                <div class="pt-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links"><a class="d-block overflow-hidden rounded-lg mb-3" href="#"><img src="img/shop/departments/04.jpg" alt="Shoes"/></a>
+                                        <h6 class="font-size-base mb-2">Furniture &amp; Decor</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Home furniture</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Office furniture</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Lighting and decoration</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pt-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links"><a class="d-block overflow-hidden rounded-lg mb-3" href="#"><img src="img/shop/departments/05.jpg" alt="Shoes"/></a>
+                                        <h6 class="font-size-base mb-2">Accessories</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Hats</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Sunglasses</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Bags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pt-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links"><a class="d-block overflow-hidden rounded-lg mb-3" href="#"><img src="img/shop/departments/06.jpg" alt="Shoes"/></a>
+                                        <h6 class="font-size-base mb-2">Entertainment</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Kid's toys</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Video games</a></li>
+                                            <li class="widget-list-item"><a class="widget-list-link" href="#">Outdoor / Camping</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Primary menu-->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Homepage v.1</a></li>
+                            <li><a class="dropdown-item" href="index2.html">Homepage v.2</a></li>
+                            <li><a class="dropdown-item disabled" href="#">More pages coming...</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Shop</a>
+                        <div class="dropdown-menu p-0">
+                            <div class="d-flex flex-wrap flex-md-nowrap px-2">
+                                <div class="py-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links">
+                                        <h6 class="font-size-base mb-3">Shop layouts</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-grid-ls.html">Shop Grid - Left Sidebar</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-grid-rs.html">Shop Grid - Right Sidebar</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-grid-ft.html">Shop Grid - Filters on Top</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-list-ls.html">Shop List - Left Sidebar</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-list-rs.html">Shop List - Right Sidebar</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-list-ft.html">Shop List - Filters on Top</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="py-4 px-3" style="width: 15rem;">
+                                    <div class="widget widget-links">
+                                        <h6 class="font-size-base mb-3">Shop pages</h6>
+                                        <ul class="widget-list">
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-categories.html">Shop Categories</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="shop-single.html">Product Page</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="cart.html">Cart</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="checkout-details.html">Checkout - Details</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="checkout-shipping.html">Checkout - Shipping</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="checkout-payment.html">Checkout - Payment</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="checkout-review.html">Checkout - Review</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="checkout-complete.html">Checkout - Complete</a></li>
+                                            <li class="widget-list-item pb-1"><a class="widget-list-link" href="order-tracking.html">Order Tracking</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="py-4 pe-3" style="width: 15rem;"><a class="d-block" href="#"><img src="img/shop/menu-banner.jpg" alt="Promo banner"/></a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Account</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="account-orders.html">Orders History</a></li>
+                            <li><a class="dropdown-item" href="account-profile.html">Profile Settings</a></li>
+                            <li><a class="dropdown-item" href="account-address.html">Account Addresses</a></li>
+                            <li><a class="dropdown-item" href="account-payment.html">Payment Methods</a></li>
+                            <li><a class="dropdown-item" href="account-wishlist.html">Wishlist</a></li>
+                            <li><a class="dropdown-item" href="account-tickets.html">My Tickets</a></li>
+                            <li><a class="dropdown-item" href="account-single-ticket.html">Single Ticket</a></li>
+                            <li><a class="dropdown-item" href="account-signin.html">Sign In / Sign Up</a></li>
+                            <li><a class="dropdown-item" href="account-password-recovery.html">Password Recovery</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
+                            <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Help Center</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="help-topics.html">Help Topics</a></li>
+                                    <li><a class="dropdown-item" href="help-single-topic.html">Single Topic</a></li>
+                                    <li><a class="dropdown-item" href="help-submit-request.html">Submit a Request</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="404.html">404 Not Found</a></li>
+                            <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Navbar Variants</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="navbar-1-level-light.html">1 Level Light</a></li>
+                                    <li><a class="dropdown-item" href="navbar-1-level-dark.html">1 Level Dark</a></li>
+                                    <li><a class="dropdown-item" href="navbar-2-level-light.html">2 Level Light</a></li>
+                                    <li><a class="dropdown-item" href="navbar-2-level-dark.html">2 Level Dark</a></li>
+                                    <li><a class="dropdown-item" href="navbar-3-level-light.html">3 Level Light (Default)</a></li>
+                                    <li><a class="dropdown-item" href="navbar-3-level-dark.html">3 Level Dark</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog List Layouts</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="blog-list-sidebar.html">List with Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="blog-list.html">List no Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog Grid Layouts</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="blog-grid-sidebar.html">Grid with Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="blog-grid.html">Grid no Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="blog-single.html">Single Post</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Docs / Components</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="docs/dev-setup.html">
+                                    <div class="d-flex">
+                                        <div class="lead text-muted pt-1"><i class="czi-book"></i></div>
+                                        <div class="ms-2"><span class="d-block text-heading">Documentation</span><small class="d-block text-muted">Kick-start customization</small></div>
+                                    </div></a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="components/typography.html">
+                                    <div class="d-flex">
+                                        <div class="lead text-muted pt-1"><i class="czi-server"></i></div>
+                                        <div class="ms-2"><span class="d-block text-heading">Components<span class="badge badge-info ms-2">40+</span></span><small class="d-block text-muted">Faster page building</small></div>
+                                    </div></a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="docs/changelog.html">
+                                    <div class="d-flex">
+                                        <div class="lead text-muted pt-1"><i class="czi-edit"></i></div>
+                                        <div class="ms-2"><span class="d-block text-heading">Changelog<span class="badge badge-success ms-2">v1.0</span></span><small class="d-block text-muted">Regular updates</small></div>
+                                    </div></a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="mailto:contact@createx.studio">
+                                    <div class="d-flex">
+                                        <div class="lead text-muted pt-1"><i class="czi-help"></i></div>
+                                        <div class="ms-2"><span class="d-block text-heading">Support</span><small class="d-block text-muted">contact@createx.studio</small></div>
+                                    </div></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</header>
